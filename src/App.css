@@ -1,0 +1,303 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+
+.App {
+  text-align: left;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+#container{
+  display: grid;
+  grid: "navbar navbar"
+        "leftSideMenu mainPannel" 1fr
+        /3.2em; 
+  height: 100vh;
+}
+
+#navbar{
+  grid-area: navbar;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#leftSideMenu{
+  grid-area: leftSideMenu;
+  background-color: #303f9f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: flex-start;
+  height: 100%;
+}
+
+#mainPannel{
+  grid-area: mainPannel;
+  display: grid;
+  grid: "mainArea rightSideForm"
+        /1fr;
+  overflow: auto;
+}
+
+#mainArea{
+  grid-area: mainArea;
+  background-color: #eeeeee;
+  padding: 0 1em;
+  overflow: auto;
+}
+
+#rightSideForm{
+  grid-area: rightSideForm;
+  -moz-box-shadow:    -1px 0 5px 0 rgb(165, 165, 165);
+  -webkit-box-shadow: -1px 0 5px 0 rgb(165, 165, 165);
+  box-shadow:         -1px 0 5px 0 rgb(165, 165, 165);
+}
+
+#searchAreaInput{
+  width: 20em;
+}
+
+#searchArea{
+  margin: auto;
+  display: flex;
+}
+
+.custom-control-label{
+  color: #FAFAFA;
+}
+
+.custom-control.custom-switch{
+  margin-left: 0.5em;
+}
+
+.navButton{
+  padding: 5px 5px 10px 5px;
+  color: rgb(153, 153, 153);
+}
+
+.navButton:hover{
+  padding: 5px 5px 10px 5px;
+  color: #FAFAFA;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#nameLabel{
+  padding: 5px 5px 10px 5px;
+  color: rgb(153, 153, 153);
+}
+
+#filterList{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  direction: ltr;
+  overflow: auto;
+}
+
+.filterItem{
+  padding: 0.2em 2em 0.3em 1em;
+  margin: 5px;
+  border-radius: 1em;
+  color: rgb(34, 34, 34);
+  /* border: solid lightgrey 2px; */
+  -moz-box-shadow:    -1px 0 5px 0 rgb(165, 165, 165);
+  -webkit-box-shadow: -1px 0 5px 0 rgb(165, 165, 165);
+  box-shadow:         -1px 1px 4px 0 rgb(34, 34, 34);
+  position: relative;
+}
+
+.filterClose{
+  cursor: pointer;
+  mask: url(times-circle-solid.svg); /*https://fontawesome.com/license*/
+  background: rgb(112, 112, 112);
+  /* background-image: url(times-circle-solid.svg); https://fontawesome.com/license */
+  display: inline-block;
+  width: 2ch;
+  height: 2ch;
+  mask-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  right: 0.5em;
+  /* padding: 12px 16px; */
+  transform: translate(0%, -50%);
+}
+
+#loginForm{
+  width: 18em;
+  margin: 20px auto;
+}
+
+#registerForm{
+  width: 18em;
+  margin: 20px auto;
+}
+
+#createNewForm{
+  width: 30em;
+  margin: 20px auto;
+}
+
+.form-control{
+  margin-bottom: 10px;
+}
+
+.even-index-color{
+  background-color: #3f51b5;
+}
+
+.odd-index-color{
+  background-color: #00bbd3;
+}
+
+.indented{
+  margin-left: 3ch;
+}
+
+.breadCrumb{
+  font-size: 0.7em;
+}
+
+.breadCrumb:hover{
+  font-size: 0.7em;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+span:focus{
+  outline: none;
+}
+
+.bullet-icon-no-children:before{ /*TODO : before ? */
+  content: "\2022";
+  display: inline-block;
+  width: 2ch;
+  text-align: center;
+}
+
+#play-icon {
+  background-image: url('play_circle_black_24dp.svg'); /*google icons : https://fonts.google.com/icons?icon.query=play&icon.set=Material+Icons*/
+  background-size: 100% auto;
+  width: 3.5ch;
+  height: 3.5ch;
+}
+
+#add-icon {
+  background-image: url('circle-plus-solid.svg'); /*https://fontawesome.com/license*/
+  background-size: 100% auto;
+  width: 3.5ch;
+  height: 3.5ch;
+}
+
+#avatar-icon {
+  background-image: url('kissclipart-white-user-icon-png-clipart-computer-icons-clip-ar-cc800e19db31a2ae.png');
+  background-size: 100%;
+  width: 3ch;
+  height: 3ch;
+  margin : 0.5ch;
+}
+
+.leftSideMenu-icon {
+  padding: 1ch;
+}
+
+.leftSideMenu-icon:hover {
+  background-color: #3f51b5;
+  padding: 1.2ch 0.8ch 0.8ch 1.2ch;
+  border-left: rgb(131, 150, 236) 3px solid;
+  cursor: pointer;
+}
+
+.leftSideMenu-icon-selected {
+  margin-top: auto;
+  background-color: #3f51b5;
+  padding: 1.2ch 0.8ch 0.8ch 1.2ch;
+  border-left: rgb(131, 150, 236) 3px solid;
+}
+
+.no-border{
+  outline: none;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+.greyed{
+  color: rgb(200, 200, 200);
+}
+
+#bookmarkedCategories, #otherCategories, #questionCards{
+  display: 	flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.list-group-item{
+  height: 4rem;
+}
+
+.card-body {
+  overflow-wrap: anywhere;
+  overflow: hidden;
+}
+
+.bookmark {
+  cursor: pointer;
+  mask: url(bookmark_FILL1_wght400_GRAD0_opsz24.svg); /*google icons*/
+  background: #dee2e6;
+  width: 22px;
+  height: 22px;
+  mask-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  }
+
+.heart {
+  cursor: pointer;
+  mask: url(favorite_FILL1_wght400_GRAD0_opsz24.svg); /*google icons*/
+  background: #dee2e6;
+  width: 22px;
+  height: 22px;
+  mask-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  }
+
+.bookmarked, .liked {
+  background: red;
+}
