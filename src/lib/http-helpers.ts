@@ -13,9 +13,7 @@ export const customFetch = async (input: RequestInfo, init?: RequestInit | undef
 
  //Setup headers with token
 export const authHeaders = () => {
-    //Get token from State or localstorage
     const token = localStorage.token;
-    //Headers
     const headers : {[key : string]: any} = {
         'Accept': 'application/json',
         'Content-type': 'application/json',
@@ -23,7 +21,6 @@ export const authHeaders = () => {
         // 'Access-Control-Allow-Headers': 'Origin,access-control-allow-headers,access-control-allow-methods,access-control-allow-origin,content-type,x-auth-token',
         // 'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT,DELETE'
     }
-    //If token, add to headers
     if(token){
         headers['x-auth-token'] = token;
     }

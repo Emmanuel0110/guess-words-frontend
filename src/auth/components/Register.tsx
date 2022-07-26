@@ -14,7 +14,7 @@ function Register({isAuthenticated, setIsAuthenticated, setUser}: {isAuthenticat
     }
 
         if (isAuthenticated) {
-            return <Navigate to='/projects'/>;
+            return <Navigate to='/guesswords/play'/>;
         }  
         return <Form id="registerForm">
                     <Form.Group className='formgroup'>

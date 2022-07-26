@@ -14,7 +14,7 @@ function Login({isAuthenticated, setIsAuthenticated, setUser}: {isAuthenticated:
     }
 
         if (isAuthenticated) {
-            return <Navigate to='/play'/>;
+            return <Navigate to='/guesswords/play'/>;
         }        
         return <Form id="loginForm">
                     <Form.Group className='formgroup'>

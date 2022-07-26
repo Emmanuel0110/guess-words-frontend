@@ -36,7 +36,7 @@ export interface QuestionCard {
 export let url = '/api/';
 
 if (process.env.NODE_ENV === 'production'){
-    url = 'https://emmanuelpaatz.com/guess-words/api/';
+    url = 'https://emmanuelpaatz.com/guesswords/api/';
 }
 
 function App() {
@@ -66,17 +66,17 @@ function App() {
         <div id="navbar">
           {!isAuthenticated && location? ( //TODO: Find a better way to change className based on url
             <Routes>
-              <Route path="/login"
-                element={<Link className="navButton" to="/register">
+              <Route path="/guesswords/login"
+                element={<Link className="navButton" to="/guesswords/register">
                   Register
                 </Link>}
               />
-              <Route path="/register"
-                element={<Link className="navButton" to="/login">
+              <Route path="/guesswords/register"
+                element={<Link className="navButton" to="/guesswords/login">
                   Login
                 </Link>}
               />
-              <Route path="/" element={<Navigate to="/login" replace/>} />
+              <Route path="/guesswords/" element={<Navigate to="/guesswords/login" replace/>} />
             </Routes>
           ) : (
             <>
@@ -92,7 +92,7 @@ function App() {
                 />
               </div>
               <div id="nameLabel">{user?.username}</div>
-              <Link to="/profile">
+              <Link to="/guesswords/profile">
                 <div id="avatar-icon"></div>
               </Link>
               {isAuthenticated ? (
@@ -110,13 +110,13 @@ function App() {
         <div id="leftSideMenu">
           {isAuthenticated ? (
             <div>
-              <Link to="/play">
-                <div className={classNameSideMenuIcon("/play")}> 
+              <Link to="/guesswords/play">
+                <div className={classNameSideMenuIcon("/guesswords/play")}> 
                   <div id="play-icon"></div> 
                 </div>
               </Link>
-              <Link to="/add">
-                <div className={classNameSideMenuIcon("/add")}>
+              <Link to="/guesswords/add">
+                <div className={classNameSideMenuIcon("/guesswords/add")}>
                   <div id="add-icon"></div>
                 </div>
               </Link>
@@ -127,30 +127,30 @@ function App() {
           <div id="mainArea">
             <Routes>
               <Route 
-                path="/register"
+                path="/guesswords/register"
                 element={<Register isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />}
               />
               <Route 
-                path="/login" 
+                path="/guesswords/login" 
                 element={<Login isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setUser={setUser}/>} />
               
               <Route
-                path="/play"
+                path="/guesswords/play"
                 element={isAuthenticated ? <ListOfCategories /> : <Login isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setUser={setUser}/>}>
                   
               </Route> 
               <Route
-                    path="/play/:categoryId"
+                    path="/guesswords/play/:categoryId"
                     element={isAuthenticated ? <ListOfQuestions /> : <Login isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setUser={setUser}/>}/>
                     <Route
-                    path="/play/question/:questionId"
+                    path="/guesswords/play/question/:questionId"
                     element={isAuthenticated ? <Quizz /> : <Login isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setUser={setUser}/>}/>
               <Route
-                path="/add"
+                path="/guesswords/add"
                 element={isAuthenticated ? <CreateNew /> : <Login isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setUser={setUser}/>}
               />
                <Route
-                path="/profile"
+                path="/guesswords/profile"
                 element={isAuthenticated ? <Profile /> : <Login isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setUser={setUser}/>}
               />
             </Routes>

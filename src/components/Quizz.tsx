@@ -39,7 +39,7 @@ function Quizz() {
   }
 
   return <div id="quizz">
-    <div style={{margin: '10px'}}><Link to={'/play/' + currentCategory._id}>{"Back to " + currentCategory.label}</Link></div>
+    <div style={{margin: '10px'}}><Link to={'/guesswords/play/' + currentCategory._id}>{"Back to " + currentCategory.label}</Link></div>
     {question ? <Card style={{ width: '30rem', margin: '20px auto'}}>
     <Card.Body>
       <Card.Title>{question.label}</Card.Title>

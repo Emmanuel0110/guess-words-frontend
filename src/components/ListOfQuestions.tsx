@@ -27,7 +27,7 @@ function ListOfQuestions() {
       return {...user, likedQuestions: newLikedQuestions}
     });
   }
-  
+
   return ((currentCategory?._id === categoryId) && questions.length ? <div id='listOfQuestions'>
     <div id="categoryHeader">
           <Card style={{ width: '20rem', height: '12rem', margin: '10px'}}>
@@ -42,7 +42,7 @@ function ListOfQuestions() {
         const likeClass = user.likedQuestions.includes(question._id) ? "heart liked" : "heart";
         return (
           <Card key={index} style={{ width: '10rem', height: '10rem', margin: '10px'}}>
-            <Link to={"/play/question/" + question._id} style={{ height: '100%', textDecoration: 'none', color: 'white'}}>
+            <Link to={"/guesswords/play/question/" + question._id} style={{ height: '100%', textDecoration: 'none', color: 'white'}}>
             <Card.Body style={{height: '100%', display: 'flex', alignItems: 'flex-end', backgroundColor: 'white', color: 'black'}}>
               <Card.Title style={{fontSize: '15px', textDecoration: 'none'}}>{question.label}</Card.Title>
             </Card.Body>
