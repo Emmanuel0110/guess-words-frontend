@@ -301,3 +301,15 @@ span:focus{
 .bookmarked, .liked {
   background: red;
 }
+
+
+.cancel-icon{
+  background-image: url('cancel-icon.svg');/*https://uxwing.com/cancel-icon/*/
+  display: inline-block;
+  width: 2ch;
+  height: 3ch;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  margin-right: 1ch;
+}

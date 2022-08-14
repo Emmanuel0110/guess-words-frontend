@@ -55,6 +55,8 @@ export const computeNewAnswer = (answers: {value: string, frequency: number}[], 
   if (newIndex !== undefined) {
     if (index < 5) {
       newAnswers.splice(index, 1);
+    } else {
+      newAnswers.pop();
     }
     newAnswers.splice(newIndex, 0, {value: answer, frequency});
   } else {
@@ -88,3 +90,7 @@ export const fetchCategoryById = (categoryId: string) => {
     console.log(err);
   });
 }
+
+export const firstCapital = (str: string) => {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+} 
