@@ -16,6 +16,8 @@ function CreateNew() {
   const [answer_5, setAnswer_5] = useState("");
 
   const resetFields = () => {
+    setLabel("");
+    setcategory("");
     setAnswer_1("");
     setAnswer_2("");
     setAnswer_3("");
@@ -37,19 +39,19 @@ function CreateNew() {
   return <Form id="createNewForm">
               <Form.Group>
                   <Form.Label>Title</Form.Label>
-                  <Form.Control id="label" name="label" type="text" onChange={e => setLabel((e.target as HTMLInputElement).value)}/>
+                  <Form.Control id="label" name="label" type="text" onChange={e => setLabel((e.target as HTMLInputElement).value)} value={label}/>
               </Form.Group>
               <Form.Group>
                   <Form.Label>Category</Form.Label>
-                  <Form.Control id="category" name="category" type="text" onChange={e => setcategory((e.target as HTMLInputElement).value)}/>
+                  <Form.Control id="category" name="category" type="text" onChange={e => setcategory((e.target as HTMLInputElement).value)} value={category}/>
               </Form.Group>
               <Form.Group>
                   <Form.Label>Answers</Form.Label>
-                  <Form.Control id="answer_1" name="answer_1" type="text" placeholder='Proposition 1' onChange={e => setAnswer_1((e.target as HTMLInputElement).value)}/>
-                  <Form.Control id="answer_2" name="answer_2" type="text" placeholder='Proposition 2' onChange={e => setAnswer_2((e.target as HTMLInputElement).value)}/>
-                  <Form.Control id="answer_3" name="answer_3" type="text" placeholder='Proposition 3' onChange={e => setAnswer_3((e.target as HTMLInputElement).value)}/>
-                  <Form.Control id="answer_4" name="answer_4" type="text" placeholder='Proposition 4' onChange={e => setAnswer_4((e.target as HTMLInputElement).value)}/>
-                  <Form.Control id="answer_5" name="answer_5" type="text" placeholder='Proposition 5' onChange={e => setAnswer_5((e.target as HTMLInputElement).value)}/>
+                  <Form.Control id="answer_1" name="answer_1" type="text" placeholder='Proposition 1' onChange={e => setAnswer_1((e.target as HTMLInputElement).value)} value={answer_1}/>
+                  <Form.Control id="answer_2" name="answer_2" type="text" placeholder='Proposition 2' onChange={e => setAnswer_2((e.target as HTMLInputElement).value)} value={answer_2}/>
+                  <Form.Control id="answer_3" name="answer_3" type="text" placeholder='Proposition 3' onChange={e => setAnswer_3((e.target as HTMLInputElement).value)} value={answer_3}/>
+                  <Form.Control id="answer_4" name="answer_4" type="text" placeholder='Proposition 4' onChange={e => setAnswer_4((e.target as HTMLInputElement).value)} value={answer_4}/>
+                  <Form.Control id="answer_5" name="answer_5" type="text" placeholder='Proposition 5' onChange={e => setAnswer_5((e.target as HTMLInputElement).value)} value={answer_5}/>
               </Form.Group>
               <Button onClick={onSubmit}>Submit</Button>
           </Form>
